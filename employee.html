@@ -224,7 +224,60 @@
   </div>
 </body>
 </html>
+<script>
+const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQcXztfhCUIK4ju9zk4wMrLhEdkj72R0PGfnlsGDfbJ29BgC9fuQVmtoqt0eHo7Jk5nVjNzmKZe6M4H/pub?output=csv";
+
+fetch(sheetURL)
+  .then(response => response.text())
+  .then(csv => {
+    const rows = csv.split("\n").slice(1); // skip header row
+    const container = document.getElementById("appointments");
+
+    rows.forEach(row => {
+      if (!row.trim()) return;
+
+      const cols = row.split(",");
+
+      const name = cols[1];
+      const phone = cols[2];
+      const service = cols[3];
+      const time = cols[4];
+
+      const card = document.createElement("div");
+      card.style.border = "1px solid #ccc";
+      card.style.padding = "12px";
+      card.style.marginBottom = "10px";
+      card.style.borderRadius = "8px";
+      card.style.background = "#f9f9f9";
+
+      card.innerHTML = `
+        <strong>${name}</strong><br>
+        📞 ${phone}<br>
+        💈 ${service}<br>
+        ⏰ ${time}<br><br>
+        <button class="complete">Complete</button>
+        <button class="pending">Pending</button>
+        <button class="cancel">Cancel</button>
+      `;
+
+      card.querySelector(".complete").onclick = () => {
+        card.style.background = "#d1fae5";
+      };
+
+      card.querySelector(".pending").onclick = () => {
+        card.style.background = "#fef3c7";
+      };
+
+      card.querySelector(".cancel").onclick = () => {
+        card.style.background = "#fee2e2";
+      };
+
+      container.appendChild(card);
+    });
+  });
+</script>
 
 </body>
 </html>
+
 
