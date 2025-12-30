@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VonBooking – Employee Dashboard</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: #f3f4f6;
+    }
+
+    /* Header */
+    header {
+      background: #2563eb;
+      color: white;
+      padding: 16px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    /* Container */
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 16px;
+    }
+
+    /* Booking Card */
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+
+    .card p {
+      margin: 4px 0;
+      color: #555;
+      font-size: 15px;
+    }
+
+    /* Buttons */
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    button {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      color: white;
+    }
+
+    .complete {
+      background: #10b981;
+    }
+
+    .cancel {
+      background: #ef4444;
+    }
+
+    /* Status badge */
+    .status {
+      margin-top: 8px;
+      font-size: 13px;
+      font-weight: bold;
+      color: #2563eb;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    VonBooking – Employee Dashboard
+  </header>
+
+  <div class="container">
+
+    <!-- Booking 1 -->
+    <div class="card">
+      <h3>Customer: John Doe</h3>
+      <p>📞 Phone: 555-123-4567</p>
+      <p>✂️ Service: Haircut</p>
+      <p>⏰ Time: 2:30 PM</p>
+
+      <div class="actions">
+        <button class="complete">Complete</button>
+        <button class="cancel">Cancel</button>
+      </div>
+
+      <div class="status">Status: Pending</div>
+    </div>
+
+    <!-- Booking 2 -->
+    <div class="card">
+      <h3>Customer: Jane Smith</h3>
+      <p>📞 Phone: 555-987-6543</p>
+      <p>💅 Service: Nails</p>
+      <p>⏰ Time: 4:00 PM</p>
+
+      <div class="actions">
+        <button class="complete">Complete</button>
+        <button class="cancel">Cancel</button>
+      </div>
+
+      <div class="status">Status: Pending</div>
+    </div>
+
+  </div>
+
+</body>
+</html>
